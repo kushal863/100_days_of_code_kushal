@@ -21,8 +21,8 @@ elif (first_step_lower=='left'):
          third_step = input("You arrive at the island unharmed. There is a house with three doors. one red, one yellow and one blue. Which color do you choose?: Which door? \n")
          third_step_lower = third_step.lower()
          if (third_step_lower=='blue') or (third_step_lower)=='red':
-            print("Game Over.")
+            print("You fell into the hole. Game Over.")
          elif (third_step_lower=='yellow'):
-            print("You Win!")
+            print("You found the tresure.You Win!")
     
 
