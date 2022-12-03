@@ -16,7 +16,6 @@ if (extra_cheese=='Y'):
     large_pizza+=1
 
 
-
 if (size=='S'):
     if (add_pepperoni=='Y'):
         total_bill=small_pizza+pepproni_small_pizza
