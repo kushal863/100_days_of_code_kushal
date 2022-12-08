@@ -58,3 +58,5 @@ print(result_sec)
 
 
 #Another_approach
+
+random.shuffle()
