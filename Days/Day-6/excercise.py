@@ -7,4 +7,4 @@
 
 # calling function
 
-# my_function() # just call that function.
+# my_function() # just call that function
