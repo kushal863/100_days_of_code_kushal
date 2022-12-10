@@ -7,7 +7,7 @@ This repository consist of concepts, code excercies and solutions day-wise.
 
 ## Acknowledgements
 
- - Suggestion to understand concept first of that day then try excercise.
+ - I Suggest to understand concept first of that day then try excercise.
  - Take 30 to 40 mins just think and breakdown the problem into steps.
  - After this much time, you refer the solutions.
  - Course reference: Dr.Angela Yu Udemy
