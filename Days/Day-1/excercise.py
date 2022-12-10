@@ -1,5 +1,5 @@
 # Day - 1
-print("Hello Kushal!")
+print("Hello Kushal!!")
 
 # Excercise 1 - Printing
 
