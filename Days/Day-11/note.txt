@@ -1,0 +1,58 @@
+Follow the Roadmap and complete:
+Do you want to play a game of Blackjack? Type 'y' or 'n': you
+ then dispplay logo
+ display
+ your cars :[num1,num2], curent score: 16
+ Computer's first card:7
+type y to get another card type n to pass
+
+if you pass there will be two condition:
+dealer can win with these condition:
+	- if his count greater than mine and under 21
+	-if his count more than 16 then he can not select more than 1 card
+	- if his count less than 16 he can select multiple cards
+ 
+ Do you want to play a game of blackjack
+ if y function again call
+ 
+ when you start game again clear screen as well
+
+
+
+ Steps for the blackJack Project:
+
+1. ASk for deal or not:
+
+Do you want to play a game of Blackjack? Type 'y' or 'n':
+create a list of numbers:
+
+random chose two numbers for you and dealer and print Your information
+check you want to select another number or not
+if not then turn to dealer.
+
+dealer will take mulitple cards until 16 then complare
+	if getting 11 and count more than 21 then add 1
+	if not more than 21 then add 11
+if its more then 16 then complare.. who wins
+
+ask user to start game again or nor
+
+
+2. if its deal..dealer and me should chosse 2 random cards
+you can exit here as well exit or compare ( if you think its enough count)
+
+if dealer total count is less than 16 then dealer can select another card as well until 16
+
+ace will count 1.. when total count grater than 21
+
+select card until its under 21 or you can exit and can compare with dealer
+	more than 21 than case third
+
+3. select card.. if total count greater than 21 than dealer wins
+		if you don't want to select card
+		then dealer can chose card and complare with you.. if
+		your number is largest then you win and if dealer number largest than dealer win.
+		
+4. if i selected one card and the count is 21.. dealer's count also 21 then draw
+
+5. 
