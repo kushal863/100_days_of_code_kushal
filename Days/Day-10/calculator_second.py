@@ -42,5 +42,5 @@ while should_continue:
     if should_continue =='n':
         should_continue=False
     elif should_continue =='y':
-        function = operations[operation_symbol]
+        num1 = answer
 
