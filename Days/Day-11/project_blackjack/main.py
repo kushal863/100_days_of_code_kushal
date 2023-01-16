@@ -85,6 +85,11 @@ while user_input =='y':
                     print(f"your cards : {your_numbers_list}, current score: {your_answer}")
                     print(f"Computer's final hand: {computer_numbers_list}, final score : {computer_answer}")
                     print("You Lose!")
+                elif (computer_answer==your_answer):
+                    print(f"your cards : {your_numbers_list}, current score: {your_answer}")
+                    print(f"Computer's final hand: {computer_numbers_list}, final score : {computer_answer}")
+                    print("Draw!")
+
                 else:
                     print(f"your cards : {your_numbers_list}, current score: {your_answer}")
                     print(f"Computer's final hand: {computer_numbers_list}, final score : {computer_answer}")
