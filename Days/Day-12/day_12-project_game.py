@@ -12,6 +12,12 @@ level = input("Choose a difficulty. Type 'easy' or 'hard': ")
 guess_match=False
 
 def response(num,guess_number):
+    """
+    Checking guessed number against actual number
+
+    guess_match is a global variable----
+    If guess number matching with actual then making guess_match to TRUE
+    """
     global guess_match
     guess_match =False
     if (guess_number>num):
