@@ -44,18 +44,65 @@ def print_report(remaining_resource,store_collection):
     print(f"Coffee: {remaining_resource['coffee']}")
     print(f"Money: ${store_collection}")
 
-def resource_check(data,pending_resources,user_input):
+def resource_check(data,pending_resources,user_input):    
+    global store_collection
+    global resources
     resource_check =False
     data1=data[user_input]['ingredients']
-    if (data1['water'] <= pending_resources['water']) & (data1['milk']<= pending_resources['milk']) & (data1['coffee']<= pending_resources['coffee']):
-        global resources
-        resources['water']= resources['water']-data1['water']
-        resources['milk']= resources['milk']-data1['milk']
-        resources['coffee']= resources['coffee']-data1['coffee']
-        print(resources)
-        resource_check =True
+    cost = data[user_input]['cost']
+    if (user_input=='espresso'):
+            
+            print("under espresso")
+                                    
+            if (data1['water'] <= pending_resources['water'])  & (data1['coffee']<= pending_resources['coffee']):
+                resource_check =True
+            else:
+                print("Sorry there is no enough resources")
+
+    elif (user_input=='latte') or (user_input=='cappuccino'):
+        
+        if (data1['water'] <= pending_resources['water']) & (data1['milk']<= pending_resources['milk']) & (data1['coffee']<= pending_resources['coffee']):
+            
+            resource_check =True
+            store_collection += cost
+        else:
+            print("Sorry there is no enough resources")
     
     return resource_check
+
+def process_coins(data,user_input):
+    global resources
+    data1 = data[user_input]['ingredients']
+    cost = data[user_input]['cost']
+    print("Please insert coins.")
+    quaters = int(input("How many quaters? : "))
+    dimes= int(input("How many dimes? : "))
+    nickles = int(input("How many nickles? : "))
+    pennies = int(input("How many pennies? : "))
+
+    # calculate monetary value
+
+    ans = 0.25*quaters+0.1*dimes+0.05*nickles+0.01*pennies
+
+    if (ans >cost):
+        # means enough amount to purchase a coffee
+        change = ans-cost
+        print(f"Here is {change} in change.")
+        print(f"Here is {user_input} ! enjoy!")
+
+        if (user_input=='espresso'):
+            resources['water']= resources['water']-data1['water']
+            resources['coffee']= resources['coffee']-data1['coffee']
+        elif (user_input=='latte') or (user_input=='cappuccino'):
+            resources['water']= resources['water']-data1['water']
+            resources['milk']= resources['milk']-data1['milk']
+            resources['coffee']= resources['coffee']-data1['coffee']
+    else:
+        pass
+        
+
+
+
 
 
 machine_power =True     
@@ -65,6 +112,16 @@ while machine_power:
         print_report(resources,store_collection)
     elif (user_input=='latte') :
         ans =resource_check(MENU,resources,user_input)
-        print(ans)
+        if ans:
+            process_coins(MENU,user_input=user_input)
     elif user_input =='off':
         machine_power=False
+    elif (user_input=='espresso'):
+        ans = resource_check(MENU,resources,user_input)
+        if ans:
+            process_coins(MENU,user_input=user_input)
+
+    elif (user_input=='cappuccino'):
+        ans = resource_check(MENU,resources,user_input)
+        if ans:
+            process_coins(MENU,user_input=user_input)
