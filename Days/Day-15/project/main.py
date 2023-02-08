@@ -49,40 +49,25 @@ def resource_check(data,pending_resources,user_input):
     global resources
     resource_check =False
     data1=data[user_input]['ingredients']
-    cost = data[user_input]['cost']
     if (user_input=='espresso'):
-            
-            print("under espresso")
                                     
-            if (data1['water'] <= pending_resources['water']):
-                pass
-            else:
+            if (data1['water'] >= pending_resources['water']):
                 print(f"Sorry there is no enough water")
                 
-            if (data1['coffee']<= pending_resources['coffee']):
-                pass
-            else:
+            if (data1['coffee']>= pending_resources['coffee']):
                 print("Sorry there is no enough coffee")
             if (data1['water'] <= pending_resources['water']) & (data1['coffee']<= pending_resources['coffee']):
                 resource_check=True
 
     elif (user_input=='latte') or (user_input=='cappuccino'):
         
-        if (data1['water'] <= pending_resources['water']):
-            
-            pass
-        else:
+        if (data1['water'] >= pending_resources['water']):
             print(f"Sorry there is no enough water")
             
-        if (data1['milk']<= pending_resources['milk']):
-            pass
-        else:
+        if (data1['milk']>= pending_resources['milk']):
             print(f"Sorry there is no enough milk")
             
-        if (data1['coffee']<= pending_resources['coffee']):
-                       
-            pass
-        else:
+        if (data1['coffee']>= pending_resources['coffee']):
             print("Sorry there is no enough resources")
 
         if (data1['water'] <= pending_resources['water']) & (data1['milk']<= pending_resources['milk']) & (data1['coffee']<= pending_resources['coffee']):
