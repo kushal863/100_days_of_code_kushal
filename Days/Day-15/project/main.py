@@ -45,7 +45,7 @@ def print_report(remaining_resource,store_collection):
     print(f"Money: ${store_collection}")
 
 def resource_check(data,pending_resources,user_input):    
-    global store_collection
+    
     global resources
     resource_check =False
     data1=data[user_input]['ingredients']
@@ -54,23 +54,43 @@ def resource_check(data,pending_resources,user_input):
             
             print("under espresso")
                                     
-            if (data1['water'] <= pending_resources['water'])  & (data1['coffee']<= pending_resources['coffee']):
-                resource_check =True
+            if (data1['water'] <= pending_resources['water']):
+                pass
             else:
-                print("Sorry there is no enough resources")
+                print(f"Sorry there is no enough water")
+                
+            if (data1['coffee']<= pending_resources['coffee']):
+                pass
+            else:
+                print("Sorry there is no enough coffee")
+            if (data1['water'] <= pending_resources['water']) & (data1['coffee']<= pending_resources['coffee']):
+                resource_check=True
 
     elif (user_input=='latte') or (user_input=='cappuccino'):
         
-        if (data1['water'] <= pending_resources['water']) & (data1['milk']<= pending_resources['milk']) & (data1['coffee']<= pending_resources['coffee']):
+        if (data1['water'] <= pending_resources['water']):
             
-            resource_check =True
-            store_collection += cost
+            pass
+        else:
+            print(f"Sorry there is no enough water")
+            
+        if (data1['milk']<= pending_resources['milk']):
+            pass
+        else:
+            print(f"Sorry there is no enough milk")
+            
+        if (data1['coffee']<= pending_resources['coffee']):
+                       
+            pass
         else:
             print("Sorry there is no enough resources")
-    
+
+        if (data1['water'] <= pending_resources['water']) & (data1['milk']<= pending_resources['milk']) & (data1['coffee']<= pending_resources['coffee']):
+            resource_check =True
     return resource_check
 
 def process_coins(data,user_input):
+    global store_collection
     global resources
     data1 = data[user_input]['ingredients']
     cost = data[user_input]['cost']
@@ -91,14 +111,16 @@ def process_coins(data,user_input):
         print(f"Here is {user_input} ! enjoy!")
 
         if (user_input=='espresso'):
+            store_collection+=cost
             resources['water']= resources['water']-data1['water']
             resources['coffee']= resources['coffee']-data1['coffee']
         elif (user_input=='latte') or (user_input=='cappuccino'):
+            store_collection+=cost
             resources['water']= resources['water']-data1['water']
             resources['milk']= resources['milk']-data1['milk']
             resources['coffee']= resources['coffee']-data1['coffee']
     else:
-        pass
+        print("Sorry that's not enough money. Money refunded.")
         
 
 
