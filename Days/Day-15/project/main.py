@@ -75,6 +75,12 @@ def resource_check(data,pending_resources,user_input):
     return resource_check
 
 def process_coins(data,user_input):
+
+    """
+    process coins takes data and user input as input
+    Calculating coins and checking is entered amount enough to purchase a drink
+    
+    """
     global store_collection
     global resources
     data1 = data[user_input]['ingredients']
