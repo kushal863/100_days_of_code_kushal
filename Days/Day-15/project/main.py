@@ -78,7 +78,7 @@ def process_coins(data,user_input):
 
     """
     process coins takes data and user input as input
-    Calculating coins and checking is entered amount enough to purchase a drink
+    Calculating coins and checking is received money enough to purchase a drink
     
     """
     global store_collection
@@ -97,7 +97,7 @@ def process_coins(data,user_input):
 
     if (ans >cost):
         # means enough amount to purchase a coffee
-        change = ans-cost
+        change = round(ans-cost,2)
         print(f"Here is {change} in change.")
         print(f"Here is {user_input} ! enjoy!")
 
