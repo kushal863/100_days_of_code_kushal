@@ -11,11 +11,21 @@ The turtle library in Python is a built-in graphics library
 
 """
 
-import turtle
+from turtle import Turtle, Screen
 import another_module
 
 print(another_module.another_variable)
 
-timmy=turtle.Turtle()
+timmy=Turtle()
+timmy.color('red')
+
+timmy.forward(100)
+screen =Screen()
+
 
 print(timmy)
+print(screen.canvheight)
+
+
+
+screen.exitonclick()
