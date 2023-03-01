@@ -58,13 +58,44 @@
 # user_1.display(34)
 
 
+# class User:
+
+#     def __init__(self,user_id,username):
+#         self.id = user_id
+#         self.username = username
+
+
+
+# user1 = User(101,'kushal')
+# user2 = User(102,'ricky')
+
+# # print(user1)
+# print(user1.username)
+# print(user1.id)
+
+# # print(user2)
+# print(user2.username)
+# print(user2.id)
+
+
 class User:
 
     def __init__(self,user_id,username):
         self.id = user_id
         self.username = username
+        self.follower = 0
+
+
 
 user1 = User(101,'kushal')
-print(user1)
+user2 = User(102,'ricky')
+
+# print(user1)
 print(user1.username)
 print(user1.id)
+print(user1.follower)
+
+# print(user2)
+print(user2.username)
+print(user2.id)
+print(user2.follower)
