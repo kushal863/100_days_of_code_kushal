@@ -27,4 +27,3 @@ quiz_class = QuizBrain(question_bank)
 while quiz_class.still_has_questions():
     quiz_class.next_question()
 
-print("checking cloud")
