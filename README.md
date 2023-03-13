@@ -11,4 +11,5 @@ Lead Data Analyst with 4.5 years of experience.
 Strong understanding of -
 - Python
 - SQL
+- No SQL Databases
 - Tools - PowerBI, Excel and Tableau.

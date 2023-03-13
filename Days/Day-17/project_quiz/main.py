@@ -26,6 +26,3 @@ quiz_class = QuizBrain(question_bank)
 
 while quiz_class.still_has_questions():
     quiz_class.next_question()
-
-print("You've completed the quiz")
-print(f"Your final score was: {quiz_class.user_score}/{quiz_class.questions_number}")
