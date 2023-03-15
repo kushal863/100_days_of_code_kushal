@@ -1,15 +1,24 @@
 from turtle import Turtle,Screen
+import random
 
 tt = Turtle()
+colors =[  "black", "red", "green", "blue", "cyan", "yellow","magenta","green", "blue", "cyan"]
 
 tt.shape('arrow')
-tt.shapesize(1)
 tt_screen = Screen()
 
-for _ in range(20):
-    tt.forward(10)
-    tt.penup()
-    tt.forward(10)
-    tt.pendown()
+def draw_shale(sides):
+    angle = 360//sides
+    for _ in range(sides):
+        tt.forward(100)
+        print(angle)
+        tt.right(angle)
+
+for i in range(3,10):
+    draw_shale(i)
+    
+    tt.pencolor(random.choice(colors))
+    # print(360//i)
+
 
 tt_screen.exitonclick()
