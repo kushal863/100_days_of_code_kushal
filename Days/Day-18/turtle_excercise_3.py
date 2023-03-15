@@ -11,7 +11,6 @@ def draw_shale(sides):
     angle = 360//sides
     for _ in range(sides):
         tt.forward(100)
-        print(angle)
         tt.right(angle)
 
 for i in range(3,10):
