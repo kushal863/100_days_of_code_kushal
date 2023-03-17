@@ -2,7 +2,7 @@ from turtle import Turtle,Screen
 import random
 
 tt = Turtle()
-colors =[  "black", "red", "green", "blue", "cyan", "yellow","magenta","green", "blue", "cyan"]
+colors =["black", "red", "green", "blue", "cyan", "yellow","magenta","green", "blue", "cyan"]
 
 tt.shape('arrow')
 tt_screen = Screen()
