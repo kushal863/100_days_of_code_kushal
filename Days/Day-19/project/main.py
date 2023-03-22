@@ -27,6 +27,7 @@ if user_bet:
 while is_race_on:
 
     for turtle in turtle_instances:
+        
         if turtle.xcor()> 250:
             is_race_on=False
             winning_color = turtle.pencolor()
@@ -35,6 +36,8 @@ while is_race_on:
             else:
                 print(f"You've lost! The {winning_color} turtle is the winner")
         ran_num = random.randint(1,10)
+        
+
         turtle.forward(ran_num)
 
     
