@@ -17,15 +17,29 @@ t_screen.tracer(0)
 snake = Snake()
 
 
+t_screen.listen()
+t_screen.onkey(snake.up,'Up')
+t_screen.onkey(snake.down,'Down')
+t_screen.onkey(snake.left,'Left')
+t_screen.onkey(snake.right,'Right')
 
 
 game_is_on =True
 
 while game_is_on:
     t_screen.update()
-    time.sleep(0.1)
+    time.sleep(0.3)
+    
+    
+    
+    
+    
 
     snake.move()
+    
+
+   
+
 
 
 
