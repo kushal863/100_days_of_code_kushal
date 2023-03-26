@@ -1,8 +1,10 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 import random
 import time
 
 from snake import Snake
+from food import Food
+from scoreboard import Scoreboard
 
 # t = Turtle(shape='turtle')
 
@@ -15,6 +17,8 @@ t_screen.tracer(0)
 
 
 snake = Snake()
+food = Food()
+scoreboard = Scoreboard()
 
 
 t_screen.listen()
@@ -28,14 +32,19 @@ game_is_on =True
 
 while game_is_on:
     t_screen.update()
-    time.sleep(0.3)
-    
-    
-    
-    
-    
+    time.sleep(0.1)
 
     snake.move()
+
+    # detect the collision with food
+
+    if snake.head.distance(food) <15:
+        
+        food.refresh()
+        scoreboard.increase_score()
+        print("collied")
+        
+        
     
 
    
