@@ -42,7 +42,6 @@ while game_is_on:
         
         food.refresh()
         scoreboard.increase_score()
-        print("collied")
         
         
     
