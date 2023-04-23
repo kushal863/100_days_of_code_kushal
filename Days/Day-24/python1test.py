@@ -148,5 +148,62 @@ for i in input:
     age = i[-2:]
     sol.append([(name,age)])
 
-print(sol)
+# print(sol)
 
+
+
+"""
+8) Given a list of list: [[1, 2], [3, 4], [4, 5]], Flatten them such that the output should be
+[1, 2, 3, 4, 4, 5]
+Input => [[3, 10], [8, 9, 0, 1]] => Output => [3, 10, 8, 9, 0, 1]
+
+"""
+
+input = [[1, 2], [3, 4], [4, 5]]
+
+output =[]
+
+for i in input:
+    for j in i:
+        output.append(j)
+# print(output)
+
+
+"""
+9) Given the list a given number, determine the factorial of a number
+Input => factorial([6, 3, 2, 1, 0]) would return [720, 6, 2, 1, 1]
+Note: Factorial of 1 and 0 is 1, and Factorial of 2 is 1x2 , factorial of 3 is 1x2x3, factorial of 4 is 1x2x3x4 etc
+
+"""
+
+def factorial(list1):
+    result =[]
+    fac =1
+    for num in list1:
+        # print(num)
+        if num ==0 or num ==1:
+            result.append(1)
+        else:
+            for i in range(2, num+1):
+                fac = fac*i
+            # print(f"{num}: {fac}")
+            result.append(fac)
+            fac=1
+
+    return result
+            
+# print(factorial([6, 3, 2, 1, 0]))
+
+
+""""
+10) Given a side of polygon to you , how do you determine internal sum of angles of that polygon?
+Write a function to do the same. Exmaple if the function takes 3 then output is 180, if it takes 4 then
+output is 360 etc.
+
+"""
+
+
+def polygon_angle(num):
+    return (num-2) * 180
+
+print(polygon_angle(5))
