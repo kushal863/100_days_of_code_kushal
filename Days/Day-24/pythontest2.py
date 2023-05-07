@@ -26,7 +26,16 @@ An example for 3x3 matrix:
              [4,5,6], => sum is 15
              [7,8,9]] => sum is 24
 """
-
+matrix = []
+start = 1
+for i in range(10):
+    row =[]
+    for col in range(5):
+        row.append(start)
+        start+=1
+    matrix.append(row)
+matrix.sort(key=lambda row : sum(row))
+print(matrix)
 
 
 
@@ -92,7 +101,17 @@ so 6th fibonacci number is 8 etc.
 ## [1, 1, 2, 3, 5, 8, 13, 21, 34, 55] for input value of 10
 
 """
-
+def fibonacci(n):
+    if n == 1:
+        return [1]
+    elif n == 2:
+        return [1, 1]
+    else:
+        fib_seq = [1, 1]
+        for i in range(2, n):
+            fib_seq.append(fib_seq[i-1]+ fib_seq[i-2])
+        return fib_seq
+print(fibonacci(10))
 
 
 """
@@ -106,6 +125,20 @@ float_range(2.5, 10, 1.5) => output => 4, 5.5, 7, 8.5
 similar to range function , the upper limit should not be included in the output.
 """
 
+def float_range(start,end,step):
+    res =[]
+    if not isinstance(start,float) or not isinstance(end,float):
+        return "Please enter float values"
+    else:
+        total_range= start+end
+        steps = total_range /step
+        while start < end:
+            res.append(start)
+            
+            start+=step
+        return [round(i,2) for i in res]
+
+# print(float_range(1.2, 4.7, 1.2))
 
 
 
@@ -119,7 +152,7 @@ head([2, 3, 4, 1, 10, 7, 8, 1], 5) => output => [2, 3, 4, 1, 10]
 def head(lst,num):
     lst1 = lst[:num]
     return lst1
-print(head([2, 3, 4, 1, 10, 7, 8, 1], 5))
+# print(head([2, 3, 4, 1, 10, 7, 8, 1], 5))
 
 
 """
@@ -134,20 +167,47 @@ have string values. Make sure that these length and width can be accessed as rea
 class Rectangle:
 
     def __init__(self,length,width) -> None:
-        self.length = length
-        self.width = width
+        if isinstance(length, str) or isinstance(width,str):
+            print("Please enter numeric values for length and width")
+            self._length = None
+            self._width = None
+        elif (length <=0) or (width <=0):
+            print("Please enter possitive number")
+            self._length = None
+            self._width = None
+        else:
+            self._length = length
+            self._width = width
+    
+    @property
+
+    def length(self):
+        return self._length
+    
+    @property
+    def width(self):
+        return self._width
 
     def area(self):
-        return self.length * self.width
+        if self._length is not None and self._width is not None:
+            return self._length * self._width
+        return "Cannot calculate area"
     
     def perimeter(self):
-        return  2*(self.length* self.width)
+        if self._length is not None and self._width is not None:
+            
+            return  2*(self._length* self._width)
+        return "Cannot calculate perimeter"
     
 class Square(Rectangle):
 
     def __init__(self, length, width) -> None:
         super().__init__(length, width)
 
-    
+  
 
-    
+# test1 = Square(12,'i')
+
+
+# print(test1.area())
+# print(test1.perimeter())
