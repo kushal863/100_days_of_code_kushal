@@ -25,23 +25,26 @@ df=pd.read_csv('50_states.csv')
 
 scores =0
 correct_states =True
+
+states = df['state'].to_list()
 for i in range(50):
 
     answer_state = screen.textinput(title =f"{scores}/50 States Correct", prompt="What's another state's name").title()
     # print(df.loc[df['state']=='Alaska']['x'].values[0])
 
     try:
-        x_cor =df.loc[df['state']==str(answer_state)]['x'].values[0]
-        y_cor =df.loc[df['state']==str(answer_state)]['y'].values[0]
-        my_turtle.goto(x_cor,y_cor)
-        my_turtle.write(answer_state)
-        correct_states=True
+        if answer_state in states:
+            state_data = df[df['state']==str(answer_state)]
+            my_turtle.goto(int(state_data.x),int(state_data.y))
+            my_turtle.write(state_data.state.item())
+        else:
+             pass
 
     except Exception as e:
             print(f"Enter Corrent State Name : {e}")
-            correct_states=False
+            
 
-    if correct_states== True:
-        scores+=1
-    else:
-        pass
+    scores+=1
+
+
+screen.exitonclick()
