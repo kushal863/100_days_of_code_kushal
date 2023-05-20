@@ -27,10 +27,14 @@ scores =0
 correct_states =True
 
 states = df['state'].to_list()
-for i in range(50):
-
+answers = []
+while len(answers) <50:
     answer_state = screen.textinput(title =f"{scores}/50 States Correct", prompt="What's another state's name").title()
     # print(df.loc[df['state']=='Alaska']['x'].values[0])
+    answers.append(answer_state)
+
+    if answer_state =="Exit":
+         break
 
     try:
         if answer_state in states:
@@ -46,5 +50,6 @@ for i in range(50):
 
     scores+=1
 
+df[~df['state'].isin(answers)].to_csv('Not_answered.csv',index=False)
 
 screen.exitonclick()
