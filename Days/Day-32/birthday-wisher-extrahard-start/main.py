@@ -35,15 +35,16 @@ day = date.day
 # Checking if birthday date
 birthday_n = []
 RECEIVER_EMAIL_ADDRESS = []
-for k,value in data.items():
-    print(value)
-    if (month_num in value and day in value):
-        print("Yes")
-        birthday_n.append(value[0])
-        RECEIVER_EMAIL_ADDRESS.append(value[1])
+try:
 
-print(birthday_n)
-print(RECEIVER_EMAIL_ADDRESS)
+    for k,value in data.items():
+        if (month_num in value and day in value):
+            print("Yes")
+            birthday_n.append(value[0])
+            RECEIVER_EMAIL_ADDRESS.append(value[1])
+except Exception as e:
+    print(f"No Once Birthday Today.")
+
 
 random_letter=random.choice([letter for letter in os.listdir('letter_templates')])
 
